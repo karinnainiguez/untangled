@@ -7,9 +7,12 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Welcome to Untangled</h1>
+          <h1 className="App-title">Untangled - The WikiWeb Game</h1>
         </header>
-        <p>Welcome.  Pick a starting and ending points from Wikipedia.</p>
+				<h4>Welcome to UnTangled!</h4>
+        <p>
+					Enter your starting Wiki page and ending Wiki page.  Our spidey sense will determine the shortest path between them.  Try to achieve it yourself, or give up to our awesome power and display the best paths!
+				</p>
 				<SearchForm />
       </div>
     );

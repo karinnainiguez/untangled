@@ -1,0 +1,23 @@
+.search-form {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+.search-form > div > input {
+  border: 3px solid #c27ba0;
+  padding: 1vw;
+  margin: 0 3vw;
+  text-align: center;
+  font-size: 1em;
+}
+
+.search-form > .button {
+  margin: 1vw;
+  font-weight: bold;
+  background-color: #c27ba0;
+  color: #eeeeee;
+  border: 3px solid black;
+  text-shadow: 1px 1px black;
+  box-shadow: 2px 2px black;
+  font-size: 1em;
+}
