@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import SearchForm from './Components/SearchForm';
+import Intro from './Components/Intro';
 
 class App extends Component {
 
@@ -23,15 +24,7 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Untangled - The WikiWeb Game</h1>
         </header>
-				<h4>Welcome to UnTangled!</h4>
-        <p>
-					Enter your starting Wiki page and
-					ending Wiki page.  Our spidey sense
-					will determine the shortest path
-					between them.  Try to achieve it
-					yourself, or give up to our awesome
-					power and display the best paths!
-				</p>
+        <Intro className={this.state.search}/>
 				<SearchForm updatePagesCallback={this.updatePages} className={this.state.search}/>
       </div>
     );
