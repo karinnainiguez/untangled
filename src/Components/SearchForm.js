@@ -27,7 +27,11 @@ class SearchForm extends Component {
 
 	render(){
 		return (
-			<form className="search-form" onSubmit={this.onFormSubmit}>
+			<form
+				className="search-form"
+				onSubmit={this.onFormSubmit}
+				>
+
 				<div>
 					<input
 						value={this.state.starting}
@@ -46,11 +50,13 @@ class SearchForm extends Component {
 						className="search-input"
 						/>
 				</div>
+
 				<input
 					type="submit"
 					value="FIND MY PATH!"
 					className="button"
 					/>
+				
 			</form>
 		);
 	}
