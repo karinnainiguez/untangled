@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './SearchForm.css';
 
 class SearchForm extends Component {
+
+	static propTypes = {
+		updatePagesCallback: PropTypes.func.isRequired,
+		className: PropTypes.string
+	}
 
 	constructor() {
 		super();
@@ -23,13 +29,14 @@ class SearchForm extends Component {
 
 	onFormSubmit = (event) => {
 		event.preventDefault();
+		this.props.updatePagesCallback(this.state);
 	}
 
 	render(){
 		return (
 			<form
-				className="search-form"
 				onSubmit={this.onFormSubmit}
+				className={this.props.className}
 				>
 
 				<div>
@@ -56,7 +63,7 @@ class SearchForm extends Component {
 					value="FIND MY PATH!"
 					className="button"
 					/>
-				
+
 			</form>
 		);
 	}

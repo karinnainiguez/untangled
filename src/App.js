@@ -3,6 +3,20 @@ import './App.css';
 import SearchForm from './Components/SearchForm';
 
 class App extends Component {
+
+	constructor(){
+		super();
+		this.state = {
+			search: "inactive"
+		}
+	}
+
+	updatePages = (updatedState) => {
+		console.log("Updating Pages!");
+		this.setState(updatedState);
+		this.setState({search: "active"})
+	}
+
   render() {
     return (
       <div className="App">
@@ -18,7 +32,7 @@ class App extends Component {
 					yourself, or give up to our awesome
 					power and display the best paths!
 				</p>
-				<SearchForm />
+				<SearchForm updatePagesCallback={this.updatePages} className={this.state.search}/>
       </div>
     );
   }
