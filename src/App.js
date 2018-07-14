@@ -11,7 +11,9 @@ class App extends Component {
 		super();
 		this.state = {
 			search: "active",
-			results: "inactive"
+			results: "inactive",
+			starting: "",
+			ending: ""
 		}
 	}
 
@@ -21,18 +23,28 @@ class App extends Component {
 			results: "active",
 			search: "inactive"
 		});
+
 	}
 
-  render() {
-    return (
-      <div className="App">
-        <AppHeader />
-        <Intro className={this.state.search}/>
+	render() {
+
+		let showing = null;
+		if (this.state.search === "active") {
+			showing = <div>
+				<Intro className={this.state.search}/>
 				<SearchForm updatePagesCallback={this.updatePages} className={this.state.search}/>
-				<Results className={this.state.results}/>
-      </div>
-    );
-  }
+			</div>;
+		} else {
+			showing = <Results className={this.state.results} startPage={this.state.starting} endPage={this.state.ending}/>
+		}
+
+		return (
+			<div className="App">
+				<AppHeader />
+				{showing}
+			</div>
+		);
+	}
 }
 
 export default App;
