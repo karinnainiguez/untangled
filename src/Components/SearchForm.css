@@ -1,9 +1,9 @@
-.inactive {
+.active {
   width: 80vw;
   margin: 0 auto;
 }
 
-.inactive > div > input {
+.active > div > input {
   border: 3px solid #c27ba0;
   padding: 1vw;
   margin: 0 3vw;
@@ -11,7 +11,7 @@
   font-size: 1em;
 }
 
-.inactive > .button {
+.active > .button {
   margin: 1vw;
   font-weight: bold;
   background-color: #c27ba0;
@@ -22,6 +22,6 @@
   font-size: 1em;
 }
 
-.active {
+.inactive {
   display: none;
 }

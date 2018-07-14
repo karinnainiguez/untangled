@@ -1,17 +1,20 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import './Results.css';
+
 class Results extends Component {
 
 	static propTypes = {
-		updatePagesCallback: PropTypes.func.isRequired,
+		startPage: PropTypes.string,
+		endPage: PropTypes.string,
 		className: PropTypes.string
 	}
 
 
 	render(){
 		return (
-			<h2> These are results!</h2>
+			<h2 className={this.props.className}> These are results!</h2>
 		);
 	}
 }

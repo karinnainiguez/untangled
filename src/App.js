@@ -10,22 +10,26 @@ class App extends Component {
 	constructor(){
 		super();
 		this.state = {
+			search: "active",
 			results: "inactive"
 		}
 	}
 
 	updatePages = (updatedState) => {
 		this.setState(updatedState);
-		this.setState({results: "active"});
+		this.setState({
+			results: "active",
+			search: "inactive"
+		});
 	}
 
   render() {
     return (
       <div className="App">
         <AppHeader />
-        <Intro className={this.state.results}/>
-				<SearchForm updatePagesCallback={this.updatePages} className={this.state.results}/>
-				<Results />
+        <Intro className={this.state.search}/>
+				<SearchForm updatePagesCallback={this.updatePages} className={this.state.search}/>
+				<Results className={this.state.results}/>
       </div>
     );
   }
