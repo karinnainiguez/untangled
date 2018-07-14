@@ -29,7 +29,9 @@ class SearchForm extends Component {
 
 	onFormSubmit = (event) => {
 		event.preventDefault();
-		this.props.updatePagesCallback(this.state);
+		if ( this.state.starting.length > 1 && this.state.ending.length > 1) {
+			this.props.updatePagesCallback(this.state);
+		}
 	}
 
 	render(){
