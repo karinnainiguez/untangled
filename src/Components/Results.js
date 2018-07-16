@@ -20,7 +20,7 @@ class Results extends Component {
 
 		if (this.props.startPage.length > 1 && this.props.endPage.length > 1 ) {
 			console.log("Sending Axios call: ");
-			axios.get(`http://localhost:8080/paths/${this.props.startPage}/${this.props.endPage}`)
+			axios.get(`https://api-untangled.herokuapp.com/paths/${this.props.startPage}/${this.props.endPage}`)
 			.then((response) => {
 				console.log("yay it went through");
 				console.log(response.data);
