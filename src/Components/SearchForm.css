@@ -11,7 +11,7 @@
   font-size: 1em;
 }
 
-.active > .button {
+.button {
   margin: 1vw;
   font-weight: bold;
   background-color: #c27ba0;

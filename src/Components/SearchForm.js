@@ -5,7 +5,7 @@ import './SearchForm.css';
 class SearchForm extends Component {
 
 	static propTypes = {
-		updatePagesCallback: PropTypes.func.isRequired,
+		showResultsCallback: PropTypes.func.isRequired,
 		className: PropTypes.string
 	}
 
@@ -30,7 +30,7 @@ class SearchForm extends Component {
 	onFormSubmit = (event) => {
 		event.preventDefault();
 		if ( this.state.starting.length > 1 && this.state.ending.length > 1) {
-			this.props.updatePagesCallback(this.state);
+			this.props.showResultsCallback(this.state);
 		}
 	}
 

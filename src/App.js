@@ -17,25 +17,45 @@ class App extends Component {
 		}
 	}
 
-	updatePages = (updatedState) => {
+	showResults = (updatedState) => {
 		this.setState(updatedState);
 		this.setState({
 			results: "active",
 			search: "inactive"
 		});
+	}
 
+	showSearch = () => {
+		this.setState({
+			search: "active",
+			results: "inactive",
+			starting: "",
+			ending: ""
+		});
 	}
 
 	render() {
 
 		let showing = null;
 		if (this.state.search === "active") {
-			showing = <div>
-				<Intro className={this.state.search}/>
-				<SearchForm updatePagesCallback={this.updatePages} className={this.state.search}/>
-			</div>;
+			showing =
+				<div>
+					<Intro
+						className={this.state.search}
+						/>
+					<SearchForm
+						showResultsCallback={this.showResults}
+						className={this.state.search}
+						/>
+				</div>;
 		} else {
-			showing = <Results className={this.state.results} startPage={this.state.starting} endPage={this.state.ending}/>
+			showing =
+			<Results
+				showSearchCallback={this.showSearch}
+				className={this.state.results}
+				startPage={this.state.starting}
+				endPage={this.state.ending}
+				/>;
 		}
 
 		return (

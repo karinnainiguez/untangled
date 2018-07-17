@@ -9,7 +9,8 @@ class Results extends Component {
 	static propTypes = {
 		startPage: PropTypes.string,
 		endPage: PropTypes.string,
-		className: PropTypes.string
+		className: PropTypes.string,
+		showSearchCallback: PropTypes.func.isRequired
 	}
 
 	componentDidMount(){
@@ -38,7 +39,13 @@ class Results extends Component {
 
 	render(){
 		return (
-			<h2 className={this.props.className}> These are results!</h2>
+			<div>
+				<h2 className={this.props.className}> These are results!</h2>
+				<button className="button" onClick={this.props.showSearchCallback}>Start Over</button>
+				<button className="button">Let Me Try!</button>
+				<button className="button">Show Me Possible Paths</button>
+
+			</div>
 		);
 	}
 }
