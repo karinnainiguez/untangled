@@ -11,16 +11,16 @@ class ResultSummary extends Component {
 
 	render(){
 		let show;
-			if (this.props.data) {
-				show = <h3>We Found {this.props.data.paths.length} paths from {this.props.data.from} to {this.props.data.to}</h3>
-			}
-
-			return (
-				<div>
-					{show}
-				</div>
-			);
+		if (this.props.data) {
+			show = <h3>We Found {this.props.data.paths.length} paths from {this.props.data.from} to {this.props.data.to}</h3>
 		}
-	}
 
-	export default ResultSummary;
+		return (
+			<div>
+				{show}
+			</div>
+		);
+	}
+}
+
+export default ResultSummary;

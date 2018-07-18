@@ -1,12 +1,27 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
+
+import Path from './Path';
 
 
 class ResultPaths extends Component {
 
+	static propTypes = {
+		data: PropTypes.object
+	}
+
 
 	render(){
-		return (<h3>SOME PATHS</h3>)
+		let paths = this.props.data.paths.map((path, index) =>{
+			return(
+				<Path key={index} list={path} />
+			);
+		});
+		return (
+			<div className="path container">
+				{paths}
+			</div>
+		)
 	}
 }
 

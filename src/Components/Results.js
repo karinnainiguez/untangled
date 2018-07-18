@@ -32,9 +32,9 @@ class Results extends Component {
 			this.props.updateStatusCallback("Untangling this mess.....", "success");
 			axios.get(`https://api-untangled.herokuapp.com/paths/${this.props.startPage}/${this.props.endPage}`)
 			.then((response) => {
-				this.props.updateStatusCallback("We Found Some Paths!", "success");
 				this.setState({ results: response.data });
 				console.log(response.data);
+				this.props.updateStatusCallback("", "");
 			})
 			.catch((error) => {
 				this.props.updateStatusCallback("Sorry, we couldn't Find any Paths :(", "error");
@@ -61,7 +61,7 @@ class Results extends Component {
 			show = <ResultTry />
 			break;
 			case "paths":
-			show = <ResultPaths />
+			show = <ResultPaths data={this.state.results} />
 			break;
 			default:
 			// show = "NOTHING SHOWING"
