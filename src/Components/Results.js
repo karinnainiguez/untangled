@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 
 import './Results.css';
+import ResultSummary from './ResultSummary';
+import ResultTry from './ResultTry';
+import ResultPaths from './ResultPaths';
 
 class Results extends Component {
 
@@ -54,18 +57,18 @@ class Results extends Component {
 		let show;
 		switch(this.state.show) {
 			case "try":
-			show = "THIS IS THE TRYING PAGE"
+			show = <ResultTry />
 			break;
 			case "paths":
-			show = "THIS IS THE PATH PAGE"
+			show = <ResultPaths />
 			break;
 			default:
-			show = "NOTHING SHOWING"
+			// show = "NOTHING SHOWING"
 		}
 
 		return (
 			<div className="results">
-				<div className="summary"></div>
+				<ResultSummary />
 				<div className="nav">
 					<button className="button" onClick={this.props.showSearchCallback}>Start Over</button>
 					<button className="button" onClick={this.showTry}>Let Me Try!</button>
