@@ -6,6 +6,14 @@ import './Results.css';
 
 class Results extends Component {
 
+	constructor(){
+		super();
+
+		this.state = {
+			show: ""
+		}
+	}
+
 	static propTypes = {
 		startPage: PropTypes.string,
 		endPage: PropTypes.string,
@@ -33,15 +41,37 @@ class Results extends Component {
 
 	}
 
+	showTry = () => {
+		this.setState({ show: "try" })
+	}
+
+	showPaths = () => {
+		this.setState({ show: "paths" })
+	}
+
 
 	render(){
-		return (
-			<div>
-				<h2 className={this.props.className}> These are results!</h2>
-				<button className="button" onClick={this.props.showSearchCallback}>Start Over</button>
-				<button className="button">Let Me Try!</button>
-				<button className="button">Show Me Possible Paths</button>
+		let show;
+		switch(this.state.show) {
+			case "try":
+			show = "THIS IS THE TRYING PAGE"
+			break;
+			case "paths":
+			show = "THIS IS THE PATH PAGE"
+			break;
+			default:
+			show = "NOTHING SHOWING"
+		}
 
+		return (
+			<div className="results">
+				<div className="summary"></div>
+				<div className="nav">
+					<button className="button" onClick={this.props.showSearchCallback}>Start Over</button>
+					<button className="button" onClick={this.showTry}>Let Me Try!</button>
+					<button className="button" onClick={this.showPaths}>Show Me Possible Paths</button>
+				</div>
+				<div className="main">{show}</div>
 			</div>
 		);
 	}
