@@ -4,6 +4,7 @@ import SearchForm from './Components/SearchForm';
 import Intro from './Components/Intro';
 import AppHeader from './Components/AppHeader';
 import Results from './Components/Results'
+import Status from './Components/Status'
 
 class App extends Component {
 
@@ -13,8 +14,19 @@ class App extends Component {
 			search: "active",
 			results: "inactive",
 			starting: "",
-			ending: ""
+			ending: "",
+			status: {}
 		}
+	}
+
+	updateStatus = (message, type) => {
+		this.setState({
+			status: {
+				message: message,
+				type: type
+			}
+		})
+
 	}
 
 	showResults = (updatedState) => {
@@ -44,6 +56,7 @@ class App extends Component {
 						className={this.state.search}
 						/>
 					<SearchForm
+						updateStatusCallback={this.updateStatus}
 						showResultsCallback={this.showResults}
 						className={this.state.search}
 						/>
@@ -61,6 +74,10 @@ class App extends Component {
 		return (
 			<div className="App">
 				<AppHeader />
+				<Status
+					message={this.state.status.message}
+					type={this.state.status.type}
+					/>
 				{showing}
 			</div>
 		);
