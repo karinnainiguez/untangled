@@ -34,9 +34,9 @@ class SearchForm extends Component {
 		let startPage = this.state.starting;
 		let endPage = this.state.ending;
 
-		if (startPage.length < 1 || endPage.length) {
+		if (startPage.length < 1 || endPage.length < 1) {
 			this.props.updateStatusCallback("Please type in a starting and ending page to start", "error");
-		} else { 
+		} else {
 			this.props.showResultsCallback(this.state);
 		}
 	}
@@ -54,7 +54,7 @@ class SearchForm extends Component {
 						onChange={this.onInputChange}
 						type="text"
 						name="starting"
-						placeholder="Start"
+						placeholder="Starting Page"
 						className="search-input"
 						/>
 					<input
@@ -62,7 +62,7 @@ class SearchForm extends Component {
 						onChange={this.onInputChange}
 						type="text"
 						name="ending"
-						placeholder="End"
+						placeholder="Ending Page"
 						className="search-input"
 						/>
 				</div>

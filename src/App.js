@@ -63,6 +63,7 @@ class App extends Component {
 		} else {
 			showing =
 			<Results
+				updateStatusCallback={this.updateStatus}
 				showSearchCallback={this.showSearch}
 				className={this.state.results}
 				startPage={this.state.starting}

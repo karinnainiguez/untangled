@@ -10,27 +10,24 @@ class Results extends Component {
 		startPage: PropTypes.string,
 		endPage: PropTypes.string,
 		className: PropTypes.string,
-		showSearchCallback: PropTypes.func.isRequired
+		showSearchCallback: PropTypes.func.isRequired,
+		updateStatusCallback: PropTypes.func.isRequired
 	}
 
 	componentDidMount(){
 
-		console.log(`The startPage: ${this.props.startPage}`);
-		console.log(`The endPagee: ${this.props.endPage}`);
-
-
 		if (this.props.startPage.length > 1 && this.props.endPage.length > 1 ) {
-			console.log("Sending Axios call: ");
+
+			this.props.updateStatusCallback("Untangling this mess.....", "success");
 			axios.get(`https://api-untangled.herokuapp.com/paths/${this.props.startPage}/${this.props.endPage}`)
 			.then((response) => {
-				console.log("yay it went through");
+				this.props.updateStatusCallback("We Found Some Paths!", "success");
 				console.log(response.data);
 			})
 			.catch((error) => {
-				console.log("Oh noooooooo :(");
-				console.log(error);
+				this.props.updateStatusCallback("Sorry, we couldn't Find any Paths :(", "error");
+				console.log(error.message);
 			});
-			console.log("DONE with Axios call");
 
 		}
 
