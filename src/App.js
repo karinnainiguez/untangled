@@ -26,7 +26,6 @@ class App extends Component {
 				type: type
 			}
 		})
-
 	}
 
 	showResults = (updatedState) => {

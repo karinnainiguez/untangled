@@ -6,6 +6,7 @@ class SearchForm extends Component {
 
 	static propTypes = {
 		showResultsCallback: PropTypes.func.isRequired,
+		updateStatusCallback: PropTypes.func.isRequired,
 		className: PropTypes.string
 	}
 
@@ -29,7 +30,13 @@ class SearchForm extends Component {
 
 	onFormSubmit = (event) => {
 		event.preventDefault();
-		if ( this.state.starting.length > 1 && this.state.ending.length > 1) {
+
+		let startPage = this.state.starting;
+		let endPage = this.state.ending;
+
+		if (startPage.length < 1 || endPage.length) {
+			this.props.updateStatusCallback("Please type in a starting and ending page to start", "error");
+		} else { 
 			this.props.showResultsCallback(this.state);
 		}
 	}
