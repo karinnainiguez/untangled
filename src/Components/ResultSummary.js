@@ -1,14 +1,26 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 
 class ResultSummary extends Component {
 
+	static propTypes = {
+		data: PropTypes.object
+	}
 
 
 	render(){
-		return (<h3>THIS IS THE RESULT SUMMARY</h3>)
-	}
-}
+		let show;
+			if (this.props.data) {
+				show = <h3>We Found {this.props.data.paths.length} paths from {this.props.data.from} to {this.props.data.to}</h3>
+			}
 
-export default ResultSummary;
+			return (
+				<div>
+					{show}
+				</div>
+			);
+		}
+	}
+
+	export default ResultSummary;

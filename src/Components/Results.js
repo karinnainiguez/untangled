@@ -33,6 +33,7 @@ class Results extends Component {
 			axios.get(`https://api-untangled.herokuapp.com/paths/${this.props.startPage}/${this.props.endPage}`)
 			.then((response) => {
 				this.props.updateStatusCallback("We Found Some Paths!", "success");
+				this.setState({ results: response.data });
 				console.log(response.data);
 			})
 			.catch((error) => {
@@ -68,7 +69,7 @@ class Results extends Component {
 
 		return (
 			<div className="results">
-				<ResultSummary />
+				<ResultSummary data={this.state.results}/>
 				<div className="nav">
 					<button className="button" onClick={this.props.showSearchCallback}>Start Over</button>
 					<button className="button" onClick={this.showTry}>Let Me Try!</button>

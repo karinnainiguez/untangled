@@ -5,7 +5,6 @@ import React, { Component } from 'react';
 class ResultPaths extends Component {
 
 
-
 	render(){
 		return (<h3>SOME PATHS</h3>)
 	}
