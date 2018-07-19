@@ -18,7 +18,7 @@ class ResultPaths extends Component {
 			);
 		});
 		return (
-			<div className="path container">
+			<div className="path-container">
 				{paths}
 			</div>
 		)

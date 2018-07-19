@@ -1,1 +1,27 @@
 
+.path-container {
+  margin: 1vw;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.path {
+  list-style-type: none;
+  padding: 1vw;
+  margin: 3vh;
+  border: solid white 1px;
+}
+
+.path li:last-child {
+  display: none;
+}
+
+.page-link {
+  color: black;
+  text-decoration: none;
+}
+
+.page-link:hover {
+  color: #d5a6bd;
+}
