@@ -58,7 +58,7 @@ class Results extends Component {
 		let show;
 		switch(this.state.show) {
 			case "try":
-			show = <ResultTry />
+			show = <ResultTry startPage={this.props.startPage} endPage={this.props.endPage} />
 			break;
 			case "paths":
 			show = <ResultPaths data={this.state.results} />

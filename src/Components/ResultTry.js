@@ -4,19 +4,22 @@ import PropTypes from 'prop-types';
 class ResultTry extends Component {
 
 	static propTypes = {
-		data: PropTypes.object
+		startPage: PropTypes.string,
+		endPage: PropTypes.string
 	}
 
 
 
 	render(){
+		let formatStart = `https://en.m.wikipedia.org/wiki/${this.props.startPage.replace(' ', '_')}`;
+		let formatEnd = `https://en.m.wikipedia.org/wiki/${this.props.endPage.replace(' ', '_')}`;
 		return (<div className="try-section">
 			<iframe
-				src="https://en.m.wikipedia.org/wiki/Ada_Developers_Academy"
+				src={formatStart}
 				className="try-child"
 				/>
 			<iframe
-				src="https://en.m.wikipedia.org/wiki/Java_(programming_language)"
+				src={formatEnd}
 				className="try-child"
 				/>
 		</div>);
