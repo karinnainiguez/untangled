@@ -26,6 +26,17 @@
   color: #d5a6bd;
 }
 
+.popup-box {
+  display: none;
+  width: 100%;
+}
+
+.page-link:hover + .popup-box, .popup-box:hover {
+  display: block;
+  position: relative;
+  z-index: 100;
+}
+
 .try-section {
   display: flex;
   justify-content: space-around;
