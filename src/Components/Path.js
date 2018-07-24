@@ -15,7 +15,7 @@ class Path extends Component {
 		let pages = this.props.list.map((page, index) =>{
 			return(
 				<React.Fragment key={index}>
-				<li><Page title={page}/></li>
+				<li><Page title={page.title}/></li>
 				<li>&darr;</li>
 				</React.Fragment>
 			);

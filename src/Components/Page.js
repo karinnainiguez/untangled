@@ -19,6 +19,7 @@ const Page = (props) => {
 				on="hover"
 				>
 				<iframe
+					title={title}
 					src={`https://en.m.wikipedia.org/wiki/${title}`}
 					width = "500px"
 					height = "500px"

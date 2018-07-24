@@ -7,14 +7,14 @@ import Path from './Path';
 class ResultPaths extends Component {
 
 	static propTypes = {
-		data: PropTypes.object
+		data: PropTypes.array
 	}
 
 
 	render(){
-		let paths = this.props.data.paths.map((path, index) =>{
+		let paths = this.props.data.map((path, index) =>{
 			return(
-				<Path key={index} list={path} />
+				<Path key={index} list={path["nodes(path)"]} />
 			);
 		});
 		return (

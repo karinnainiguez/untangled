@@ -30,10 +30,9 @@ class Results extends Component {
 		if (this.props.startPage.length > 1 && this.props.endPage.length > 1 ) {
 
 			this.props.updateStatusCallback("Untangling this mess.....", "success");
-			axios.get(`https://api-untangled.herokuapp.com/paths/${this.props.startPage}/${this.props.endPage}`)
+			axios.get(`http://localhost:8080/findPaths/${this.props.startPage}/${this.props.endPage}`)
 			.then((response) => {
 				this.setState({ results: response.data });
-				console.log(response.data);
 				this.props.updateStatusCallback("", "");
 			})
 			.catch((error) => {
@@ -46,11 +45,13 @@ class Results extends Component {
 	}
 
 	showTry = () => {
-		this.setState({ show: "try" })
+		this.setState({ show: "try" });
+		this.props.updateStatusCallback("", "");
 	}
 
 	showPaths = () => {
-		this.setState({ show: "paths" })
+		this.setState({ show: "paths" });
+		this.props.updateStatusCallback("", "");
 	}
 
 
@@ -69,7 +70,7 @@ class Results extends Component {
 
 		return (
 			<div className="results">
-				<ResultSummary data={this.state.results}/>
+				<ResultSummary startPage={this.props.startPage} endPage={this.props.endPage} paths={this.state.results}/>
 				<div className="nav">
 					<button className="button" onClick={this.props.showSearchCallback}>Start Over</button>
 					<button className="button" onClick={this.showTry}>Let Me Try!</button>
