@@ -4,20 +4,22 @@
 }
 
 .active > div > input {
-  border: 3px solid #c27ba0;
+  border: 3px solid rgba(0, 0, 0, 0.7);
   padding: 1vw;
   margin: 0 3vw;
   text-align: center;
   font-size: 1em;
+  background-color: whitesmoke;
 }
 
 .button {
   margin: 1vw;
+  padding: 0.5vh 1vw;
   font-weight: bold;
-  background-color: #c27ba0;
-  color: #eeeeee;
+  background-color: #AF8C86;
+  color: black;
   border: 3px solid black;
-  text-shadow: 1px 1px black;
+  text-shadow: .5px .5px rgba(0,0,0,0.5);
   box-shadow: 2px 2px black;
   font-size: 1em;
 }

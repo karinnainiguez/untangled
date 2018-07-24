@@ -69,7 +69,7 @@ class SearchForm extends Component {
 
 				<input
 					type="submit"
-					value="FIND MY PATH!"
+					value="UnTangle It!"
 					className="button"
 					/>
 

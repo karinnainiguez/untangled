@@ -74,7 +74,7 @@ class Results extends Component {
 				<div className="nav">
 					<button className="button" onClick={this.props.showSearchCallback}>Start Over</button>
 					<button className="button" onClick={this.showTry}>Let Me Try!</button>
-					<button className="button" onClick={this.showPaths}>Show Me Possible Paths</button>
+					<button className="button" onClick={this.showPaths}>Optimal Paths</button>
 				</div>
 				<div className="main">{show}</div>
 			</div>
