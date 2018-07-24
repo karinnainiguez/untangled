@@ -30,6 +30,12 @@ body {
       rgba(0, 0, 0, 0.5),
       rgba(0, 0, 0, 0.5)
     ), url('webpic.jpg');
-  height: 100vh;
+  height: 100%;
+  min-height: 100vw;
   background-size: cover;
+}
+
+.intro {
+  line-height: 1.5em;
+  font-size: 115%;
 }

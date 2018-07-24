@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 const Intro = (props) => {
 	return(
-		<div className={props.className} >
-			<h4>Welcome to UnTangled!</h4>
+		<div className={`intro ${props.className}`} >
+			<h3>Welcome to UnTangled!</h3>
 			<p>
 				Enter your starting Wiki page and
 				ending Wiki page.  Our spidey sense
