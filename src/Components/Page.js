@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Page = (props) => {
-	let link = "https://en.wikipedia.org/wiki/";
-	let title = props.title.replace(" ", "_")
+	const link = "https://en.wikipedia.org/wiki/";
+	const title = props.title.replace(" ", "_");
 	return(
 		<h4>
 			<a

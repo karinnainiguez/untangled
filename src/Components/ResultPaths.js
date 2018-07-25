@@ -12,7 +12,7 @@ class ResultPaths extends Component {
 	}
 
 
-	render(){
+	render() {
 		let paths = this.props.data.map((path, index) =>{
 			return(
 				<Path key={index} list={path["nodes(path)"]} />

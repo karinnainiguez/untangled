@@ -3,16 +3,15 @@ import PropTypes from 'prop-types';
 import { Graph } from 'react-d3-graph';
 
 class ResultGraph extends Component {
-
 	static propTypes = {
 		data: PropTypes.array
 	}
 
-	render(){
+	render() {
 		const nodeArray = []; const linkArray = []; const addedNodes = [];
 		const wholeData = this.props.data;
 
-		for(let i = 0 ; i < wholeData.length ; i += 1 ){
+		for (let i = 0 ; i < wholeData.length ; i += 1 ) {
 
 			for(let j = 0; j < wholeData[i]["nodes(path)"].length ; j += 1 ){
 				let node = wholeData[i]["nodes(path)"][j]["title"];
@@ -23,7 +22,7 @@ class ResultGraph extends Component {
 			}
 
 			for (let k = 0; k < (wholeData[i]['nodes(path)'].length - 1) ; k += 1 ) {
-				linkArray.push( {
+				linkArray.push({
 					"source": wholeData[i]['nodes(path)'][k]['title'],
 					"target": wholeData[i]['nodes(path)'][k + 1]['title']
 				});

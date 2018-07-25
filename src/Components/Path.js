@@ -5,13 +5,11 @@ import Page from './Page';
 
 
 class Path extends Component {
-
 	static propTypes = {
 		list: PropTypes.array
 	}
 
-
-	render(){
+	render() {
 		let pages = this.props.list.map((page, index) =>{
 			return(
 				<React.Fragment key={index}>
@@ -25,7 +23,7 @@ class Path extends Component {
 			<ul className="path">
 				{pages}
 			</ul>
-		)
+		);
 	}
 }
 

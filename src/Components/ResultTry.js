@@ -8,23 +8,23 @@ class ResultTry extends Component {
 		endPage: PropTypes.string
 	}
 
-
-
 	render(){
 		let formatStart = `https://en.m.wikipedia.org/wiki/${this.props.startPage.replace(' ', '_')}`;
 		let formatEnd = `https://en.m.wikipedia.org/wiki/${this.props.endPage.replace(' ', '_')}`;
-		return (<div className="try-section">
-			<iframe
-				title={this.props.startPage}
-				src={formatStart}
-				className="try-child"
-				/>
-			<iframe
-				title={this.props.endPage}
-				src={formatEnd}
-				className="try-child"
-				/>
-		</div>);
+		return (
+			<div className="try-section">
+				<iframe
+					title={this.props.startPage}
+					src={formatStart}
+					className="try-child"
+					/>
+				<iframe
+					title={this.props.endPage}
+					src={formatEnd}
+					className="try-child"
+					/>
+			</div>
+		);
 	}
 }
 

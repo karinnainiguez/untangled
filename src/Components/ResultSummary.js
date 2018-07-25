@@ -16,7 +16,7 @@ class ResultSummary extends Component {
 		if (this.props.paths) {
 			show = <h3>
 				We Found {this.props.paths.length} optimal paths from {this.props.startPage} to {this.props.endPage}
-			</h3>
+			</h3>;
 		}
 
 		return (
