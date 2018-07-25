@@ -12,6 +12,10 @@
   background-color: whitesmoke;
 }
 
+input {
+  outline-color: #EEC2BF;
+}
+
 .button {
   margin: 1vw;
   padding: 0.7vh 1.2vw;
@@ -31,6 +35,10 @@
 .button:hover {
   background: none;
   background-color: #EEC2BF;
+}
+
+.button:focus {
+  outline-color: #EEC2BF;
 }
 
 .inactive {
