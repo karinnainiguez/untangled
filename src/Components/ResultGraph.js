@@ -40,23 +40,22 @@ class ResultGraph extends Component {
 			height: 200,
 			nodeHighlightBehavior: true,
 			node: {
-				color: 'whitesmoke',
+				color: 'black',
 				size: 200,
 				fontSize: 15,
-				fontColor: 'whitesmoke',
-				fontWeight: 'bold',
-				highlightStrokeColor: 'pink',
-				highlightFontSize: 30
+				fontColor: 'black',
+				highlightStrokeColor: '#d5a6bd',
+				highlightFontSize: 15,
+				highlightFontWeight: 'bold'
 			},
 			link: {
-				highlightColor: 'pink'
+				highlightColor: '#d5a6bd'
 			}
 		}
 
 		return (
 
-			<div>
-				<h3> HELLO FROM RESULT GRAPH</h3>
+			<div className="graph-container">
 				<Graph
 					id="graph-id"
 					data={data}

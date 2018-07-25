@@ -17,12 +17,20 @@
   padding: 0.7vh 1.2vw;
   margin: 2vh;
   font-weight: bold;
-  background-color: #AF8C86;
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    );
+  background-color: #EEC2BF;
   color: black;
   border: 3px solid black;
   text-shadow: .5px .5px rgba(0,0,0,0.5);
   box-shadow: 2px 2px black;
   font-size: 1em;
+}
+.button:hover {
+  background: none;
+  background-color: #EEC2BF;
 }
 
 .inactive {
