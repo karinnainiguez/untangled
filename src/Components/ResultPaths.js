@@ -20,7 +20,7 @@ class ResultPaths extends Component {
 		});
 		return (
 			<div className="result-paths-section">
-				<ResultGraph />
+				<ResultGraph data={this.props.data}/>
 				<div className="path-container">
 					{paths}
 				</div>
