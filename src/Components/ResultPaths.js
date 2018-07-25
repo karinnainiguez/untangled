@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import Path from './Path';
+import ResultGraph from './ResultGraph';
 
 
 class ResultPaths extends Component {
@@ -18,8 +19,11 @@ class ResultPaths extends Component {
 			);
 		});
 		return (
-			<div className="path-container">
-				{paths}
+			<div className="result-paths-section">
+				<ResultGraph />
+				<div className="path-container">
+					{paths}
+				</div>
 			</div>
 		)
 	}

@@ -65,7 +65,6 @@ class Results extends Component {
 			show = <ResultPaths data={this.state.results} />
 			break;
 			default:
-			// show = "NOTHING SHOWING"
 		}
 
 		return (
